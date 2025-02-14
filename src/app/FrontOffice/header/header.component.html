@@ -1,0 +1,70 @@
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <nav class="navbar" [class.active]="!isNavClose">
+    <a routerLink="/" class="logo">SPORT</a>
+  
+    <ul class="nav-links">
+      <li>
+        <a routerLink="/home" (click)="setActive('/home')" 
+           [class.active]="navService.getActiveLink() === '/home'">
+          Home
+        </a>
+      </li>
+      <li>
+        <a routerLink="/tactic" (click)="setActive('/tactic')" 
+           [class.active]="navService.getActiveLink() === '/tactic'">
+          Tactic
+        </a>
+      </li>
+      <li>
+        <a routerLink="/services" (click)="setActive('/services')" 
+           [class.active]="navService.getActiveLink() === '/services'">
+          Services
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contact" (click)="setActive('/contact')" 
+           [class.active]="navService.getActiveLink() === '/contact'">
+          Contact Us
+        </a>
+      </li>
+    </ul>
+  
+    <!-- Sign In / Sign Up alignés à droite -->
+    <div class="auth-links">
+      <a routerLink="/login" (click)="setActive('/login')" class="sign-in"
+         [class.red]="navService.getActiveLink() === '/login'">
+        Sign In
+      </a>
+      <a routerLink="/signup" (click)="setActive('/signup')" class="sign-up"
+         [class.red]="navService.getActiveLink() === '/signup'">
+        Sign Up
+      </a>
+    </div>
+  
+    <div class="menu-toggle" (click)="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+
+   <!-- Sidebar     <img [src]="'assets/images/image.jpg'" alt="Description"> -->
+
+<div class="sidebar" [class.active]="isSidebarOpen">
+
+    <div class="Xmenu-toggle" (click)="XSidebar()">
+      <i class="fas fa-times"></i>
+    </div>
+  
+    <hr style="border: none; height: 5px; background-color: rgb(211, 235, 213);">
+    
+    <ul>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/services">Services</a></li>
+      <li><a routerLink="/contact">Contact Us</a></li>
+      <li><a routerLink="/login">Sign In</a></li>
+      <li><a routerLink="/signup">Sign Up</a></li>
+    </ul>
+  </div>
+  

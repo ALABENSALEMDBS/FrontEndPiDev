@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+
+
+<!-- login.component.html -->
+<div class="background-image" [style.backgroundImage]="'url(' + backgroundImageUrl + ')'"></div>
+
+<div class="login-container">
+
+  <div class="balloons-container">
+    <img *ngFor="let balloon of balloons" 
+         src="https://lh4.googleusercontent.com/proxy/Fxrk9ekzL7KFQTJ3kR4yDJYyJko96aaMo8_sFjN5NADQDSW3vLcigL_V6c3O1Ila0fU8Kw2pxS8a--Vq4aC7O-RohTLtp7Ia5PyysQ"
+         class="balloon"
+         [ngStyle]="{'left': balloon.left + '%', 'animation-duration': balloon.speed + 's'}">
+  </div>
+
+    <h1>Login</h1>
+    <p class="subtitle">Sign Into Your Account</p>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email <span style="color: red;">*</span></label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="Your email:" />
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password <span style="color: red;">*</span></label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Password:" />
+      </div>
+  
+      <div class="form-group remember-forgot">
+        <label class="remember-me">
+          <input type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="rememberMe">
+          Remember me
+        </label>
+        <a routerLink="/forgotpassword" class="forgot-password">Forgot your password?</a>
+      </div>
+  
+      <button type="submit" class="login-button">Login</button>
+  
+      <div class="separator">
+        Or
+      </div>
+  
+      <p class="signup-link">Don't have an account? <a routerLink="/signup">Sign Up</a></p>
+    </form>
+  </div>
+
+
+  <app-footer></app-footer>

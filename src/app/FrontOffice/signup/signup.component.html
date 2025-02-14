@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<div class="background-image"></div>
+
+<!-- signup.component.html -->
+<div class="signup-container">
+
+  <div class="balloons-container">
+    <img *ngFor="let balloon of balloons" 
+         src="https://lh4.googleusercontent.com/proxy/Fxrk9ekzL7KFQTJ3kR4yDJYyJko96aaMo8_sFjN5NADQDSW3vLcigL_V6c3O1Ila0fU8Kw2pxS8a--Vq4aC7O-RohTLtp7Ia5PyysQ"
+         class="balloon"
+         [ngStyle]="{'left': balloon.left + '%', 'animation-duration': balloon.speed + 's'}">
+  </div>
+
+
+    <h1>Sign Up</h1>
+    <p class="subtitle">Create New Account</p>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="fullName">Full Name <span style="color: red;">*</span></label>
+        <input type="text" id="fullName" name="fullName" [(ngModel)]="fullName" required placeholder="Name:" />
+      </div>
+  
+      <div class="form-group">
+        <label for="emailAddress">Email Address <span style="color: red;">*</span></label>
+        <input type="email" id="emailAddress" name="emailAddress" [(ngModel)]="emailAddress" required placeholder="Email:" />
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password <span style="color: red;">*</span></label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Password:" />
+      </div>
+  
+      <div class="form-group terms-agreement">
+        <label class="terms-label">
+          <input type="checkbox" id="agreeTerms" name="agreeTerms" [(ngModel)]="agreeTerms" required>
+          I agree to the terms of service
+        </label>
+      </div>
+  
+      <button type="submit" class="register-button">Register</button>
+  
+      <div class="separator">
+        Or
+      </div>
+  
+      <p class="login-link">Already a member? <a routerLink="/login">Login</a></p>
+    </form>
+  </div>
+
+
+  <app-footer></app-footer>
