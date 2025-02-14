@@ -6,25 +6,25 @@
   
     <ul class="nav-links">
       <li>
-        <a routerLink="/home" (click)="setActive('/home')" 
+        <a routerLink="/home" (click)="setActive('/home')" (click)="playSound()"
            [class.active]="navService.getActiveLink() === '/home'">
           Home
         </a>
       </li>
       <li>
-        <a routerLink="/tactic" (click)="setActive('/tactic')" 
+        <a routerLink="/tactic" (click)="setActive('/tactic')" (click)="playSound()"
            [class.active]="navService.getActiveLink() === '/tactic'">
           Tactic
         </a>
       </li>
       <li>
-        <a routerLink="/services" (click)="setActive('/services')" 
+        <a routerLink="/services" (click)="setActive('/services')" (click)="playSound()"
            [class.active]="navService.getActiveLink() === '/services'">
           Services
         </a>
       </li>
       <li>
-        <a routerLink="/contact" (click)="setActive('/contact')" 
+        <a routerLink="/contact" (click)="setActive('/contact')" (click)="playSound()"
            [class.active]="navService.getActiveLink() === '/contact'">
           Contact Us
         </a>
@@ -33,11 +33,11 @@
   
     <!-- Sign In / Sign Up alignés à droite -->
     <div class="auth-links">
-      <a routerLink="/login" (click)="setActive('/login')" class="sign-in"
+      <a routerLink="/login" (click)="setActive('/login')" class="sign-in" (click)="playSound()"
          [class.red]="navService.getActiveLink() === '/login'">
         Sign In
       </a>
-      <a routerLink="/signup" (click)="setActive('/signup')" class="sign-up"
+      <a routerLink="/signup" (click)="setActive('/signup')" class="sign-up" (click)="playSound()"
          [class.red]="navService.getActiveLink() === '/signup'">
         Sign Up
       </a>

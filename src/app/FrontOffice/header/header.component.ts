@@ -41,4 +41,13 @@ export class HeaderComponent {
       }
     }
 
+
+
+    playSound() {
+      const audio = new Audio();
+      audio.src = 'assets/tac.mp3';
+      audio.load();
+      audio.volume = 0.1; // Réduit le volume à 50%
+      audio.play();
+    }
 }
